@@ -8,9 +8,8 @@ pipeline {
     stages {
 		stage ('cloneSCM') {
 			steps {
-				steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/eliesjebri/DevOps-hello-world.git']]])
-                sh "ls -lart ./*"
+                		checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/eliesjebri/DevOps-hello-world.git']]])
+                		sh "ls -lart ./*"
             }
 		}
         stage('Build') {
