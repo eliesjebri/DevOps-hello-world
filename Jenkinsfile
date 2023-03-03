@@ -6,11 +6,6 @@ pipeline {
         }
     }
     stages {
-		stage ('cloneSCM') {
-			steps {
-                		checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/eliesjebri/DevOps-hello-world.git']]])
-            		}
-		}
         stage('Build') {
             steps {
                 sh 'mvn -B clean install'
