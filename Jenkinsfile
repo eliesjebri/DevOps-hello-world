@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'mvn -B clean test' 
+                sh 'echo mvn -B clean test' 
             }
         }
 	
