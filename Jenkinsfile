@@ -25,12 +25,13 @@ pipeline {
 		sh 'pwd'
             }
         }
-	stage('Build_img'){
+	stage('Artifactory'){
 	   steps {
+		sh 'cp /var/jenkins_home/workspace/DevOps-hello-world/webapp/target/*.war /artifactory/regapp_${BUILD_NUMBER}.war
 //		sh 'docker build -t eliesjebri/regapp:1.0 .'
-		script{
-                 app = docker.build("eliesjebri/regapp:1.0")
-                }
+//		script{
+//                 app = docker.build("eliesjebri/regapp:1.0")
+//                }
 	   }
 	}	
     }
