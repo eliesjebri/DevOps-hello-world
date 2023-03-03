@@ -27,7 +27,7 @@ pipeline {
         }
 	stage('Build_img'){
 	   steps {
-		sh 'docker build .'
+		sh 'docker build -t eliesjebri/regapp:1.0 .'
 	   }
 	}	
     }
