@@ -28,7 +28,9 @@ pipeline {
 	stage('Build_img'){
 	   steps {
 //		sh 'docker build -t eliesjebri/regapp:1.0 .'
-		app = docker.build("eliesjebri/regapp:1.0")
+		script{
+                 app = docker.build("eliesjebri/regapp:1.0")
+                }
 	   }
 	}	
     }
