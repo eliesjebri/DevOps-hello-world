@@ -25,6 +25,10 @@ pipeline {
 		sh 'pwd'
             }
         }
-	
+	stage('Build_img'){
+	   steps {
+		sh 'docker build .'
+	   }
+	}	
     }
 }
