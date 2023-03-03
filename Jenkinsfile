@@ -6,6 +6,13 @@ pipeline {
         }
     }
     stages {
+	stage('Clone repository') { 
+            steps { 
+                script{
+                checkout scm
+                }
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B clean install'
@@ -16,6 +23,7 @@ pipeline {
                 sh 'echo mvn -B clean test' 
             }
         }
+		stage
 	
     }
 }
