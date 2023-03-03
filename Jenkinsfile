@@ -23,7 +23,5 @@ pipeline {
                 sh 'echo mvn -B clean test' 
             }
         }
-		stage
-	
     }
 }
