@@ -20,8 +20,11 @@ pipeline {
         }
         stage('Test') { 
             steps {
+		sh 'set -xe'
                 sh 'echo mvn -B clean test' 
+		sh 'pwd'
             }
         }
+	
     }
 }
