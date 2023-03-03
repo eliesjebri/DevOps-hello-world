@@ -27,7 +27,8 @@ pipeline {
         }
 	stage('Artifactory'){
 	   steps {
-		sh 'cp /var/jenkins_home/workspace/DevOps-hello-world/webapp/target/*.war /home/regapp_${BUILD_NUMBER}.war'
+		sh 'which docker'
+		sh 'cp /var/jenkins_home/workspace/DevOps-hello-world/webapp/target/*.war /var/jenkins_home/regapp_${BUILD_NUMBER}.war'
 //		sh 'docker build -t eliesjebri/regapp:1.0 .'
 //		script{
 //                 app = docker.build("eliesjebri/regapp:1.0")
